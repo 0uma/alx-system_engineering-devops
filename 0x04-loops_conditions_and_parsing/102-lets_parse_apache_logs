@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#using #!/usr/bin/env bash in the shebang line provides more flexibility, portability, and simplicity when running Bash scripts across different systems or environments.
+
+awk '{print $1, $9}' apache-access.log
