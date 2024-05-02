@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#using #!/usr/bin/env bash in the shebang line provides more flexibility, portability, and simplicity when running Bash scripts across different systems or environments.
+
+while IFS=":" read -r username _ userid groupid _ name homedir shell
+do
+    read -r _ _ _ password _ < <(grep "^$username:" /etc/shadow)
+    echo "The user $username is part of the $groupid gang, lives in $homedir and rides $shell. User ID's place is protected by the passcode $password, more info about the user here: $name"
+done < /etc/passwd
