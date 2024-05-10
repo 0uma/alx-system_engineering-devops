@@ -7,7 +7,7 @@ interfaces=$(ip -o -4 addr show | awk '{print $2}')
 # Iterate over each network interface
 for interface in $interfaces; do
   # Get the IPv4 address for the interface
-  ipv4=$(ip -o -4 addr show dev $interface | awk '{print $4}')
+   ipv4=$(ip -o -4 addr show dev "$interface" | awk '{print $4}')
 
   # Display the IPv4 address
   echo "Interface: $interface"
